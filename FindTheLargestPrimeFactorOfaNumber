@@ -1,0 +1,58 @@
+public class LargestPrime {
+    public static int getLargestPrime(int number) {
+
+        int prime = 0;
+        int smallPrime = 0;
+        int factors = 0;
+
+        if (number >= 2) {
+            for (int i = 1; i != number + 1; i++) {
+                if (number % i == 0) {
+                    factors = number / i;
+                    if (factors % 2 == 0 && factors != 2) {
+                        continue;
+                    } else if (factors % 3 == 0 && factors != 3) {
+                        continue;
+                    } else if (factors % 5 == 0 && factors != 5) {
+                        continue;
+
+                    } else if (factors % 7 == 0 && factors != 7) {
+                        continue;
+                    } else if (factors % 11 == 0 && factors != 11) {
+                        continue;
+                    } else if (factors % 13 == 0 && factors != 13) {
+                        continue;
+                    }
+
+                    else if (factors % 17 == 0 && factors != 17) {
+                        continue;
+                    } else if (factors % 19 == 0 && factors != 19) {
+                        continue;
+                    } else if (factors % 23 == 0 && factors != 23) {
+                        continue;
+                    } else if (factors % 29 == 0 && factors != 29) {
+                        continue;
+                    } else if (factors % 31 == 0 && factors != 31) {
+                        continue;
+                    } else if (factors % 37 == 0 && factors != 37) {
+                        continue;
+                    } else if (factors % 41 == 0 && factors != 41) {
+                        continue;
+                    } else if (factors % 43 == 0 && factors != 43) {
+                        continue;
+                    } else if (factors % 47 == 0 && factors != 47) {
+                        continue;
+                    } else if (factors % 53 == 0 && factors != 53) {
+                        continue;
+                    }
+
+                    else {
+                        return factors;
+                    }
+                }
+            }
+
+        }
+        return -1;
+    }
+}
