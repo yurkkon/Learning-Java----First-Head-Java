@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class ReadingUserInputChallenge {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+
+        int i = 1;
+        while (true) {
+
+                System.out.println("Enter number #" + i);
+                boolean checkInput = scanner.hasNextInt();
+                if (checkInput) {
+                    sum += scanner.nextInt();
+                    scanner.nextLine();
+                    i++;
+                }
+                else {
+                break;
+            }
+
+        }
+            System.out.println("Total = " + sum);
+        scanner.close();
+    }
+}
