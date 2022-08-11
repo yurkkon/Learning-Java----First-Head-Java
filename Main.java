@@ -1,38 +1,29 @@
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-
-        System.out.println(findMin(readElements(readInteger())));
+        int[] array = new int[] {1, 2, 3, 4, 5, 6, 7};
+        reverse(array);
 
     }
 
-    private static int readInteger(){
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
-    }
-
-    private static int[] readElements(int NumberOfElements){
-        Scanner scanner = new Scanner(System.in);
-        int[] array = new int[NumberOfElements];
-        for( int i = 0; i < array.length; i++){
-            array[i] = scanner.nextInt();
+    private static void reverse(int[] array){
+        int[] notReversedArray = new int[array.length];
+        System.arraycopy(array, 0, notReversedArray, 0, array.length);
+        int index = 0;
+        int count = array.length - 1;
+        int temp;
+        while (true){
+            temp = array[count];
+            array[count] = array[index];
+            array[index] = temp;
+            index++;
+            count--;
+            if (count - index == 1) break;
+            if (count == index) break;
         }
-        return array;
+        System.out.println("Array = " + Arrays.toString(notReversedArray));
+        System.out.println("Reversed array = " + Arrays.toString(array));
     }
-
-    private static int findMin(int[] array){
-        for (int i = 1; i <= array.length - 1; i++){
-            if (array[i - 1] < array[i]){
-                int temp = array[i];
-                array[i] = array[i - 1];
-                array[i - 1] = temp;
-
-            }
-        }
-        return array[array.length - 1];
-    }
-
 }
